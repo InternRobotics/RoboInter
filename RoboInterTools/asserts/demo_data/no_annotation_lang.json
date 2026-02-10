@@ -1,0 +1,8 @@
+{
+  "root": {
+    "asserts/demo_data/video/RH20T_cfg2_task_0034_user_0003_scene_0007_cfg_0002_104422070044.mp4": {
+      "anno_path": "asserts/demo_data/lang_anno/RH20T_cfg2_task_0034_user_0003_scene_0007_cfg_0002.npz",
+      "save_path": "asserts/demo_data/human_anno_lang/RH20T_cfg2_task_0034_user_0003_scene_0007_cfg_0002_104422070044.npz"
+    }
+  }
+}

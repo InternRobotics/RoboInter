@@ -1,0 +1,6 @@
+gradio==6.5.0
+opencv-python==4.10.0.84
+numpy
+Pillow==10.4.0
+lmdb
+pytz
