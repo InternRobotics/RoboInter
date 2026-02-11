@@ -15,7 +15,7 @@ Hao Li\*, Ziqin Wang\*
 </div>
 
 <div align="center">
-    <a href=''><img src='https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv'></a> &nbsp;
+    <a href='https://arxiv.org/pdf/2602.09973'><img src='https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv'></a> &nbsp;
     <a href='https://lihaohn.github.io/RoboInter.github.io/'><img src='https://img.shields.io/badge/Homepage-Website-05a4a7'></a> &nbsp;
     <a href="https://huggingface.co/spaces/wz7in/robointer-demo">
     <img src="https://img.shields.io/badge/Demo-Interactive%20Space-%23007ec6?logo=gear&logoColor=white">
