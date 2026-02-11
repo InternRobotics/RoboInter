@@ -46,7 +46,7 @@ Hao Li\*, Ziqin Wang\*
 </p>
 
 
-## Highlights
+## 🌟🌟 Highlights
 
 - **Largest intermediate representation dataset for manipulation**: 230k+ episodes with dense per-frame annotations, substantially exceeding prior work (LLARVA, ECoT, ShareRobot) in both scale and diversity.
 - **10+ types of dense annotations**: Subtasks, primitive skills, segmentation, object/gripper bounding boxes, placement proposals, affordance boxes, grasp poses, motion traces, contact points, and more -- all temporally aligned with actions.
