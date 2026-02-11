@@ -1,0 +1,34 @@
+playground
+output/*
+.vscode/*
+**/__pycache__/** */
+**/__pycache__
+wandb/*
+eval_results.txt
+bar/*
+logs/
+qwen-vl-finetune/demo/videos/v_7bUu05RIksU.mp4
+qwen-vl-finetune/**/*.mp4 */
+qwen-vl-finetune/demo/videos/v_rBMQFpHspmo.mp4
+qwen-vl-finetune/demo/videos/v_TpB_zMG3XBA.mp4
+qwen-vl-finetune/demo/images/COCO_train2014_000000580957.jpg
+qwen-vl-finetune/demo/images/10149.png
+qwen-vl-finetune/demo/*
+qwen-vl-finetune/wandb/*
+qwen-vl-finetune/wandb/debug.log
+qwen-vl-finetune/wandb/debug-internal.log
+qwen-vl-finetune/qwenvl/data/__pycache__/__init__.cpython-310.pyc
+qwen-vl-finetune/wandb/latest-run
+qwen-vl-finetune/wandb/debug.log
+qwen-vl-finetune/wandb/debug-internal.log
+qwen-vl-finetune/qwenvl/data/__pycache__/__init__.cpython-310.pyc
+qwen-vl-finetune/results/*
+qwen-vl-finetune/wandb/*
+buildata/tem_images/*
+**/tem_images/** */
+qwen-vl-finetune/qwenvl/data/__pycache__/*
+buildata/tem_images/image_74.png
+
+buildata/temp_images/image_*.png
+buildata/temp_images/image_94.png
+buildata/assets
