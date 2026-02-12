@@ -203,7 +203,7 @@ We provide two VLM training frameworks in [`RoboInterVLM/`](RoboInterVLM/):
 
 ### All Available Checkpoints
 
-| Checkpoint | Base Model | Architecture | Parameters | Description | Link|
+| Checkpoint | Base Model | Architecture | Parameters | Description | Our Model Weights|
 |---|---|---|---|---|---|
 | **`RoboInter-VLM`** | [Qwen2.5-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct) | Qwen2.5-VL | ~7B | **Flagship model, recommended for best performance** |https://huggingface.co/InternRobotics/RoboInter-VLM|
 | `RoboInter-VLM_qwenvl25_3b` | [Qwen2.5-VL-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct) | Qwen2.5-VL | ~3B | Lightweight model, suitable for efficient deployment | https://huggingface.co/InternRobotics/RoboInter-VLM_qwenvl25_3b|
