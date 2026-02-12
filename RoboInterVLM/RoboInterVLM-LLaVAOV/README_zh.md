@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README_zh.md)
 
-基于 [LLaVA-OneVision](https://github.com/LLaVA-VL/LLaVA-NeXT) 的面向操作的视觉问答系统。本代码库在 LLaVA-OneVision 基础上微调，用于机器人操作理解任务，包括定位（边界框、轨迹、接触点预测）和理解（选择式问答），支持真实机器人数据集（RH20T、DROID）和 ManipVQA。
+基于 [LLaVA-OneVision](https://github.com/LLaVA-VL/LLaVA-NeXT) 的面向操作的视觉问答系统。本代码库在 LLaVA-OneVision 基础上微调，用于机器人操作理解任务，包括定位（边界框、轨迹、接触点预测）和理解（选择式问答），支持真实机器人数据集（RH20T、DROID）和 ManipVQA。我们相应的模型权重在 [https://huggingface.co/InternRobotics/RoboInter-VLM_llavaov_7B](https://huggingface.co/InternRobotics/RoboInter-VLM_llavaov_7B).
 
 ## 安装
 

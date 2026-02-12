@@ -10,27 +10,45 @@ RoboInter-Tools 提供了基于 SAM2 (Segment Anything Model 2) 的视频分割�
 
 ```mermaid
 flowchart TD
-    V["原始视频"]
+      V["原始视频"]
 
-    V --> L["语言标注<br/>（独立流程，一次性）"]
+      V --> LANG["语言标注流程"]
+      V --> SEG["分割标注流程"]
 
-    V --> A0["分割标注（第 0 轮）<br/>client.py"]
-    A0 --> P0["SAM 处理<br/>parse_sam.py --time 0"]
-    P0 --> M0["Mask + 叠加视频"]
+      %% ===== 语言标注流程 =====
+      LANG --> GPT["ChatGPT 预标注<br/>（视频级 & 片段级初稿）"]
+      GPT --> HA["人工标注（RoboInter-Tool）<br/>• 任务分解 & 片段分割<br/>•
+  原始技能分配（15 类）<br/>• 视频级 & 片段级语言描述<br/>• 接触帧记录"]
+      HA --> CC["交叉检查<br/>"]
+      CC --> SV["抽样验证<br/>"]
+      SV -->|"≥ 验收标准"| LF["最终语言标注"]
+      SV -->|"< 验收标准<br/>（最多 N 轮）"| HA
 
-    M0 --> A1["质检标注（第 1 轮）<br/>client.py"]
-    A1 --> P1["SAM 处理<br/>parse_sam.py --time 1"]
-    P1 --> M1["优化 Mask + 叠加视频"]
+      %% ===== 分割标注流程 =====
+      SEG --> A0["分割标注（第 0 轮）<br/>client.py"]
+      A0 --> P0["SAM 处理<br/>parse_sam.py --time 0"]
+      P0 --> M0["Mask + 叠加视频"]
+      M0 --> A1["质检标注（第 1 轮）<br/>client.py"]
+      A1 --> P1["SAM 处理<br/>parse_sam.py --time 1"]
+      P1 --> M1["优化 Mask + 叠加视频"]
+      M1 -.->|"按需重复"| AN["质检（第 N 轮）→ parse_sam.py --time N"]
+      AN -.-> F["最终 Mask"]
 
-    M1 -.->|"按需重复"| AN["质检（第 N 轮）→ parse_sam.py --time N"]
-    AN -.-> F["最终 Mask"]
+      %% ===== 样式 =====
+      style LANG fill:#e8f5e9,stroke:#43a047
+      style GPT fill:#e8f5e9,stroke:#43a047
+      style HA fill:#e8f5e9,stroke:#43a047
+      style CC fill:#e8f5e9,stroke:#43a047
+      style SV fill:#e8f5e9,stroke:#43a047
+      style LF fill:#e8f5e9,stroke:#43a047,stroke-width:2px
 
-    style L fill:#e8f5e9,stroke:#43a047
-    style A0 fill:#e3f2fd,stroke:#1e88e5
-    style A1 fill:#e3f2fd,stroke:#1e88e5
-    style P0 fill:#fff3e0,stroke:#fb8c00
-    style P1 fill:#fff3e0,stroke:#fb8c00
-    style AN fill:#f3e5f5,stroke:#8e24aa
+      style SEG fill:#e3f2fd,stroke:#1e88e5
+      style A0 fill:#e3f2fd,stroke:#1e88e5
+      style A1 fill:#e3f2fd,stroke:#1e88e5
+      style P0 fill:#fff3e0,stroke:#fb8c00
+      style P1 fill:#fff3e0,stroke:#fb8c00
+      style AN fill:#f3e5f5,stroke:#8e24aa
+      style F fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px
 ```
 
 ### 语言标注模式
@@ -322,7 +340,11 @@ human_anno_sam/
 ## 引用
 
 ```bibtex
-@inproceedings{
+@article{li2026robointer,
+  title={RoboInter: A Holistic Intermediate Representation Suite Towards Robotic Manipulation},
+  author={Li, Hao and Wang, Ziqin and Ding, Zi-han and Yang, Shuai and Chen, Yilun and Tian, Yang and Hu, Xiaolin and Wang, Tai and Lin, Dahua and Zhao, Feng and Liu, Si and Pang, Jiangmiao},
+  journal={arXiv preprint arXiv:2602.09973},
+  year={2025}
 }
 ```
 

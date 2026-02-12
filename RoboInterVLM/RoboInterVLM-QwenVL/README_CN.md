@@ -145,7 +145,7 @@ bash scripts/sft.sh my_experiment 4
 
 ### 操作任务评测
 
-评测脚本位于 `eval/benchmark/eval_manip/scripts/` 目录。
+评测脚本位于 `eval/benchmark/eval_manip/scripts/` 目录。我们的预训练权重在 [https://huggingface.co/InternRobotics/RoboInter-VLM](https://huggingface.co/InternRobotics/RoboInter-VLM) 和 [https://huggingface.co/InternRobotics/RoboInter-VLM_qwenvl25_3b](https://huggingface.co/InternRobotics/RoboInter-VLM_qwenvl25_3b).
 
 #### 1. 中间表示评测 (`eval.sh`)
 
@@ -322,8 +322,11 @@ python evaluation_intermediate_lang.py \
 如果您在研究中使用了本代码，请引用：
 
 ```bibtex
-@article{system2vla2024,
-    title={RoboInterVLM:},
+@article{li2026robointer,
+  title={RoboInter: A Holistic Intermediate Representation Suite Towards Robotic Manipulation},
+  author={Li, Hao and Wang, Ziqin and Ding, Zi-han and Yang, Shuai and Chen, Yilun and Tian, Yang and Hu, Xiaolin and Wang, Tai and Lin, Dahua and Zhao, Feng and Liu, Si and Pang, Jiangmiao},
+  journal={arXiv preprint arXiv:2602.09973},
+  year={2025}
 }
 ```
 

@@ -15,7 +15,7 @@ Hao Li\*, Ziqin Wang\*
 </div>
 
 <div align="center">
-    <a href=''><img src='https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv'></a> &nbsp;
+    <a href='https://arxiv.org/pdf/2602.09973'><img src='https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv'></a> &nbsp;
     <a href='https://lihaohn.github.io/RoboInter.github.io/'><img src='https://img.shields.io/badge/Homepage-Website-05a4a7'></a> &nbsp;
     <a href="https://huggingface.co/spaces/wz7in/robointer-demo">
     <img src="https://img.shields.io/badge/Demo-Interactive%20Space-%23007ec6?logo=gear&logoColor=white">
@@ -201,6 +201,15 @@ We provide two VLM training frameworks in [`RoboInterVLM/`](RoboInterVLM/):
 | RoboInter-Qwen | Qwen2.5-VL | 3B / 7B | MoE architecture, strong grounding |
 | RoboInter-LLaVA | LLaVA-OneVision | 7B | Multi-image temporal reasoning |
 
+### All Available Checkpoints
+
+| Checkpoint | Base Model | Architecture | Parameters | Description | Our Model Weights|
+|---|---|---|---|---|---|
+| **`RoboInter-VLM`** | [Qwen2.5-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct) | Qwen2.5-VL | ~7B | **Flagship model, recommended for best performance** |https://huggingface.co/InternRobotics/RoboInter-VLM|
+| `RoboInter-VLM_qwenvl25_3b` | [Qwen2.5-VL-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct) | Qwen2.5-VL | ~3B | Lightweight model, suitable for efficient deployment | https://huggingface.co/InternRobotics/RoboInter-VLM_qwenvl25_3b|
+| `RoboInter-VLM_llavaov_7B` | [LLaVA-OneVision-Qwen2-7B](https://huggingface.co/lmms-lab/llava-onevision-qwen2-7b-ov) | LLaVA-OneVision| ~7B | LLaVA-OneVision backbone with SigLIP vision encoder |https://huggingface.co/InternRobotics/RoboInter-VLM_llavaov_7B|
+
+All checkpoints are stored in `safetensors` format with `bfloat16` precision.
 ---
 
 ## RoboInter-VLA
@@ -280,7 +289,11 @@ Beyond training VLMs and VLAs, RoboInter-Data opens the door to broader research
 If you find RoboInter useful in your research, please consider citing:
 
 ```bibtex
-@article{li2025robointer,
+@article{li2026robointer,
+  title={RoboInter: A Holistic Intermediate Representation Suite Towards Robotic Manipulation},
+  author={Li, Hao and Wang, Ziqin and Ding, Zi-han and Yang, Shuai and Chen, Yilun and Tian, Yang and Hu, Xiaolin and Wang, Tai and Lin, Dahua and Zhao, Feng and Liu, Si and Pang, Jiangmiao},
+  journal={arXiv preprint arXiv:2602.09973},
+  year={2025}
 }
 ```
 
