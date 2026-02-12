@@ -147,7 +147,7 @@ Key hyperparameters in the training script:
 
 ### Manipulation Task Evaluation
 
-The evaluation scripts are located in `eval/benchmark/eval_manip/scripts/`. Official model weights is in [https://huggingface.co/InternRobotics/RoboInter-VLM_llavaov_7B](https://huggingface.co/InternRobotics/RoboInter-VLM_llavaov_7B).
+The evaluation scripts are located in `eval/benchmark/eval_manip/scripts/`. Official model weights are in [https://huggingface.co/InternRobotics/RoboInter-VLM](https://huggingface.co/InternRobotics/RoboInter-VLM) and [https://huggingface.co/InternRobotics/RoboInter-VLM_qwenvl25_3b](https://huggingface.co/InternRobotics/RoboInter-VLM_qwenvl25_3b).
 
 #### 1. Intermediate Representation Evaluation (`eval.sh`)
 
