@@ -146,7 +146,7 @@ bash scripts/sft.sh my_experiment 4
 
 ### 操作任务评测
 
-评测脚本位于 `eval/benchmark/eval_manip/scripts/` 目录。我们的预训练权重在 [https://huggingface.co/InternRobotics/RoboInter-VLM_llavaov_7B](https://huggingface.co/InternRobotics/RoboInter-VLM_llavaov_7B).
+评测脚本位于 `eval/benchmark/eval_manip/scripts/` 目录。我们的预训练权重在 [https://huggingface.co/InternRobotics/RoboInter-VLM](https://huggingface.co/InternRobotics/RoboInter-VLM) 和 [https://huggingface.co/InternRobotics/RoboInter-VLM_qwenvl25_3b](https://huggingface.co/InternRobotics/RoboInter-VLM_qwenvl25_3b).
 
 #### 1. 中间表示评测 (`eval.sh`)
 
