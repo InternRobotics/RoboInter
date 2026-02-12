@@ -6,13 +6,12 @@
 
 ## Overview
 
-RoboInterVLM is a vision-language-model (VLM) model framework for robotic manipulation tasks, built on the Qwen2.5-VL foundation model with Mixture-of-Experts (MoE) architecture. This repository provides complete training and evaluation pipelines for fine-tuning vision-language models on robotic manipulation datasets.
+RoboInterVLM is a vision-language-model (VLM) model framework for robotic manipulation tasks, built on the Qwen2.5-VL foundation model. This repository provides complete training and evaluation pipelines for fine-tuning vision-language models on robotic manipulation datasets.
 
 ## Key Features
 
 - **Multi-task Learning**: Supports generation, understanding, and language-based robotic manipulation tasks
 - **Multiple Datasets**: Integration with RH20T, DROID, and ManipVQA datasets
-- **MoE Architecture**: Efficient training with Mixture-of-Experts layers
 - **Comprehensive Evaluation**: Evaluation scripts for multiple intermediate representations including:
   - Contact point detection
   - Current/Final bounding box prediction
@@ -134,7 +133,6 @@ Key hyperparameters in the training script:
 - **Learning Rate**: 5e-6 (LLM), 1e-6 (Vision Tower)
 - **Batch Size**: 4 per device × 2 gradient accumulation = effective batch size of 8 per GPU
 - **Training Strategy**:
-  - Tune only MoE layers (`tune_moe=True`)
   - Freeze vision tower and MLP (`tune_mm_vision=False`, `tune_mm_mlp=False`)
 - **Max Sequence Length**: 8192 tokens
 - **Image Resolution**: Min 3136 pixels, Max 12845056 pixels
@@ -147,7 +145,7 @@ Key hyperparameters in the training script:
 
 ### Manipulation Task Evaluation
 
-The evaluation scripts are located in `eval/benchmark/eval_manip/scripts/`.
+The evaluation scripts are located in `eval/benchmark/eval_manip/scripts/`. Official model weights is in [https://huggingface.co/InternRobotics/RoboInter-VLM_llavaov_7B](https://huggingface.co/InternRobotics/RoboInter-VLM_llavaov_7B)
 
 #### 1. Intermediate Representation Evaluation (`eval.sh`)
 
@@ -277,14 +275,7 @@ Each log contains:
 
 ## Model Architecture
 
-The framework uses a modified Qwen2.5-VL model with MoE layers:
-
-- **Base Model**: Qwen2.5-VL-3B-Instruct
-- **Vision Encoder**: ViT-based vision tower
-- **MoE Integration**: Sparse mixture-of-experts layers for efficient scaling
-- **Custom Modifications**:
-  - 2D RoPE for spatial understanding
-  - Custom attention mechanisms for vision-language alignment
+The framework uses a modified Qwen2.5-VL model
 
 ---
 
