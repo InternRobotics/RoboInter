@@ -2,7 +2,7 @@
 
 [English](README.md) | [中文](README_zh.md)
 
-Manipulation-oriented Visual Question Answering based on [LLaVA-OneVision](https://github.com/LLaVA-VL/LLaVA-NeXT). This codebase fine-tunes LLaVA-OneVision for robotic manipulation understanding tasks, including grounding (bounding box, trajectory, contact point prediction) and understanding (choice-based QA) on real-world robot datasets (RH20T, DROID) and ManipVQA.
+Manipulation-oriented Visual Question Answering based on [LLaVA-OneVision](https://github.com/LLaVA-VL/LLaVA-NeXT). This codebase fine-tunes LLaVA-OneVision for robotic manipulation understanding tasks, including grounding (bounding box, trajectory, contact point prediction) and understanding (choice-based QA) on real-world robot datasets (RH20T, DROID) and ManipVQA. Official model weight is in [https://huggingface.co/InternRobotics/RoboInter-VLM_llavaov_7B](https://huggingface.co/InternRobotics/RoboInter-VLM_llavaov_7B).
 
 ## Installation
 
