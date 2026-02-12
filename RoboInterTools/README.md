@@ -11,28 +11,48 @@ RoboInter-Tools provides a complete pipeline for video segmentation and language
 The overall workflow consists of two stages: **Annotation** and **SAM Mask Generation**. Segmentation annotation and SAM processing alternate in a multi-round loop for iterative quality checking, until samples are marked as hard or finished:
 
 ```mermaid
-flowchart TD
-    V["Original Video"]
+flowchart TD                                        
+    V["Original Video"]                                                          
+                                                                                
+    V --> LANG["Language Annotation Pipeline"]                                   
+    V --> SEG["Segmentation Annotation Pipeline"]                                
+                                                                                
+    %% ===== Language Annotation Pipeline =====
+    LANG --> GPT["ChatGPT Pre-annotation<br/>(video-level & clip-level drafts)"]
+    GPT --> HA["Human Annotation (RoboInter-Tool)<br/>• Task decomposition & clip
+segmentation<br/>• Primitive skill assignment (15 types)<br/>• Video-level &
+clip-level descriptions<br/>• Contact frame recording"]
+    HA --> CC["Cross-checking<br/>"]
+    CC --> SV["Sampling-based Validation<br/>"]
+    SV -->|"≥ acceptance bar"| LF["Final Language Annotations"]
+    SV -->|"< acceptance bar<br/>(up to N rounds)"| HA
 
-    V --> L["Language Annotation<br/>(independent, one-time)"]
-
-    V --> A0["Segmentation Annotation (Round 0)<br/>client.py"]
+    %% ===== Segmentation Annotation Pipeline =====
+    SEG --> A0["Segmentation Annotation (Round 0)<br/>client.py"]
     A0 --> P0["SAM Processing<br/>parse_sam.py --time 0"]
     P0 --> M0["Mask + Overlay Video"]
-
     M0 --> A1["Quality Check Annotation (Round 1)<br/>client.py"]
     A1 --> P1["SAM Processing<br/>parse_sam.py --time 1"]
     P1 --> M1["Refined Mask + Video"]
-
-    M1 -.->|"repeat if needed"| AN["Quality Check (Round N) → parse_sam.py --time N"]
+    M1 -.->|"repeat if needed"| AN["Quality Check (Round N) → parse_sam.py --time
+N"]
     AN -.-> F["Final Mask"]
 
-    style L fill:#e8f5e9,stroke:#43a047
+    %% ===== Styles =====
+    style LANG fill:#e8f5e9,stroke:#43a047
+    style GPT fill:#e8f5e9,stroke:#43a047
+    style HA fill:#e8f5e9,stroke:#43a047
+    style CC fill:#e8f5e9,stroke:#43a047
+    style SV fill:#e8f5e9,stroke:#43a047
+    style LF fill:#e8f5e9,stroke:#43a047,stroke-width:2px
+
+    style SEG fill:#e3f2fd,stroke:#1e88e5
     style A0 fill:#e3f2fd,stroke:#1e88e5
     style A1 fill:#e3f2fd,stroke:#1e88e5
     style P0 fill:#fff3e0,stroke:#fb8c00
     style P1 fill:#fff3e0,stroke:#fb8c00
     style AN fill:#f3e5f5,stroke:#8e24aa
+    style F fill:#f3e5f5,stroke:#8e24aa,stroke-width:2px
 ```
 
 ### Language Annotation Mode
