@@ -340,7 +340,11 @@ human_anno_sam/
 ## 引用
 
 ```bibtex
-@inproceedings{
+@article{li2026robointer,
+  title={RoboInter: A Holistic Intermediate Representation Suite Towards Robotic Manipulation},
+  author={Li, Hao and Wang, Ziqin and Ding, Zi-han and Yang, Shuai and Chen, Yilun and Tian, Yang and Hu, Xiaolin and Wang, Tai and Lin, Dahua and Zhao, Feng and Liu, Si and Pang, Jiangmiao},
+  journal={arXiv preprint arXiv:2602.09973},
+  year={2025}
 }
 ```
 
