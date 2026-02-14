@@ -2,6 +2,26 @@
 
 A lightweight, portable dataloader for LeRobot v2.1 format datasets with rich annotation support for robot manipulation.
 
+
+## Download & Extract
+Dataset link: [https://huggingface.co/datasets/InternRobotics/RoboInter-Data](https://huggingface.co/datasets/InternRobotics/RoboInter-Data).
+The `data/` and `videos/` directories are distributed as `.tar` archives (one per chunk) to reduce the number of files during transfer. After downloading, extract them in place:
+
+```bash
+cd Annotation_with_action_lerobotv21
+
+for dataset in lerobot_droid_anno lerobot_rh20t_anno; do
+  for subdir in data videos; do
+    cd ${dataset}/${subdir}
+    for f in *.tar; do tar xf "$f" && rm "$f"; done
+    cd ../..
+  done
+done
+```
+
+After extraction, each `data/` will contain `chunk-000/`, `chunk-001/`, ... with `.parquet` files, and each `videos/` will contain `chunk-000/`, `chunk-001/`, ... with `.mp4` files. The `meta/` directories are ready to use without extraction.
+
+
 ## Features
 
 - Compatible with LeRobot v2.1 format (parquet + video)
