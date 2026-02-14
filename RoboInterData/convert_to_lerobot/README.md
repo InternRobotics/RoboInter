@@ -1,6 +1,6 @@
 # Convert RoboInter Data to LeRobot Format
 
-This directory provides tools for converting DROID and RH20T datasets (stored in LMDB format) into the [LeRobot](https://github.com/huggingface/lerobot) dataset format, with full support for RoboInter annotations.
+This directory provides tools for converting DROID and RH20T datasets (stored in LMDB format, data [link](https://huggingface.co/datasets/InternRobotics/RoboInter-Data/tree/main/Annotation_pure)) into the [LeRobot](https://github.com/huggingface/lerobot) dataset format (data [link](https://huggingface.co/datasets/InternRobotics/RoboInter-Data/tree/main/Annotation_with_action_lerobotv21)), with full support for RoboInter annotations.
 
 ---
 
