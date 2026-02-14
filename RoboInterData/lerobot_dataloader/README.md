@@ -4,7 +4,7 @@ A lightweight, portable dataloader for LeRobot v2.1 format datasets with rich an
 
 
 ## Download & Extract
-Dataset [link](https://huggingface.co/datasets/InternRobotics/RoboInter-Data](https://huggingface.co/datasets/InternRobotics/RoboInter-Data/tree/main/Annotation_with_action_lerobotv21).
+Dataset [link](https://huggingface.co/datasets/InternRobotics/RoboInter-Data/tree/main/Annotation_with_action_lerobotv21).
 The `data/` and `videos/` directories are distributed as `.tar` archives (one per chunk) to reduce the number of files during transfer. After downloading, extract them in place:
 
 ```bash
