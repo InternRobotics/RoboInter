@@ -228,6 +228,12 @@ See [`RoboInterVLA/README.md`](RoboInterVLA/README.md) for training and deployme
 
 ---
 
+## RoboInter-World
+
+A preview version has been released in [RoboInter-World](https://github.com/wz7in/RoboInterWorld).
+
+---
+
 ## RoboInter-Tool
 
 A lightweight client-server annotation toolkit powered by SAM2 for semi-automatic per-frame annotation of manipulation videos. Features include:
